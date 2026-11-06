@@ -1,1 +1,25 @@
-/* Number formatting is applied only to rendered text nodes. */
+.bases-formats-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  max-width: none;
+  color: var(--text-normal);
+}
+.bases-formats-table th,
+.bases-formats-table td {
+  box-sizing: border-box;
+  border: 1px solid var(--background-modifier-border);
+  padding: 8px 12px;
+  vertical-align: top;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  height: auto;
+}
+.bases-formats-table thead th {
+  background: var(--background-secondary);
+  text-align: start;
+}
+.bases-formats-table .bases-formats-group th { text-align: start; }
+.bases-formats-table td > :first-child { margin-block-start: 0; }
+.bases-formats-table td > :last-child { margin-block-end: 0; }
+.bases-formats-table pre { white-space: pre-wrap; }
+.bases-formats-table code { white-space: break-spaces; }

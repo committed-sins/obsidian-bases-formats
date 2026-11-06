@@ -1,10 +1,17 @@
-import { Plugin } from 'obsidian';
+import { Notice, Plugin } from 'obsidian';
 import { isAmountProperty, parseNumber } from './format.mjs';
+import { FlexibleTable } from './view.mjs';
 
-const CELL = '.bases-td[data-property], .bases-excerpts-table td[data-property]';
+const CELL = '.bases-td[data-property], .bases-formats-table td[data-property]';
 
 export default class BasesFormats extends Plugin {
   onload() {
+    const registered = this.registerBasesView('bases-formats-table', {
+      name: 'Flexible table', icon: 'table-properties',
+      factory: (controller, el) => new FlexibleTable(controller, el),
+      options: () => [{ type: 'slider', key: 'columnWidth', displayName: 'Column width', default: 280, min: 100, max: 800, step: 20 }],
+    });
+    if (!registered) new Notice('Bases Formats: enable the Bases core plugin, then reload Bases Formats to use Flexible table.');
     this.documents = new Map();
     this.active = true;
     this.observeDocument(document);
@@ -40,7 +47,7 @@ export default class BasesFormats extends Plugin {
     const namesByView = new Map();
     const retained = new Set();
     for (const cell of doc.querySelectorAll(CELL)) {
-      const view = cell.closest('.bases-view') ?? cell.closest('.bases-excerpts-table');
+      const view = cell.closest('.bases-view') ?? cell.closest('.bases-formats-table');
       if (!view || cell.closest('.bases-thead')) continue;
       if (!namesByView.has(view)) {
         const names = new Map();

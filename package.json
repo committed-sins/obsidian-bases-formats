@@ -2,7 +2,7 @@
   "name": "obsidian-bases-formats",
   "version": "0.1.0",
   "private": true,
-  "description": "Display numeric amount columns in Bases with two decimal places, without changing stored values.",
+  "description": "Format amount columns without changing stored values and display any Bases properties in a flexible table with automatically growing rows.",
   "license": "MIT",
   "author": "Michael J. Stallinger",
   "repository": {

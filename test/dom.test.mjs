@@ -9,7 +9,7 @@ function fixture(html) {
   window.NodeFilter = {SHOW_TEXT:4};
   const module = {exports:{}};
   vm.runInNewContext(fs.readFileSync(new URL('../dist/main.js',import.meta.url),'utf8'), {
-    module, exports:module.exports, require: () => ({Plugin:class {}}), document, window,
+    module, exports:module.exports, require: () => ({Plugin:class {},BasesView:class {},RenderContext:class {}}), document, window,
   });
   const plugin = new module.exports.default();
   const state = {originals:new Map()};
@@ -37,8 +37,8 @@ test('protects editors, links, mixed numbers, and handles a virtualized cell rec
   cells[3].firstElementChild.textContent='8.7654'; f.run(); assert.equal(cells[3].textContent,'8.77');
   cells[3].dataset.property='other'; f.run(); assert.equal(cells[3].textContent,'8.7654');
 });
-test('supports the optional Excerpts table and restores text on unload', () => {
-  const f=fixture('<table class="bases-excerpts-table"><tr><td data-property="formula.x" data-display-name="Price €">4.567</td></tr></table>');f.run();
+test('supports Flexible table and restores text on unload', () => {
+  const f=fixture('<table class="bases-formats-table"><tr><td data-property="formula.x" data-display-name="Price €">4.567</td></tr></table>');f.run();
   const cell=f.document.querySelector('td'); assert.equal(cell.textContent,'4.57');
   f.state.observer={disconnect(){}}; f.state.timer=null;
   f.plugin.documents=new Map([[f.document,f.state]]); f.plugin.onunload();
