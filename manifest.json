@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "minAppVersion": "1.15.0",
   "description": "Format amount columns without changing stored values and display any Bases properties in a flexible table with automatically growing rows.",
-  "author": "Michael J. Stallinger",
-  "authorUrl": "https://stallinger.dev",
+  "author": "Committed Sins",
+  "authorUrl": "https://github.com/committed-sins",
   "isDesktopOnly": false
 }

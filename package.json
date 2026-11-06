@@ -7,7 +7,7 @@
   "author": "Michael J. Stallinger",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stallinger-dev/obsidian-bases-formats.git"
+    "url": "https://github.com/committed-sins/obsidian-bases-formats.git"
   },
   "engines": {
     "node": ">=22"

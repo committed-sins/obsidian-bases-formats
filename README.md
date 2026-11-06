@@ -1,5 +1,9 @@
 # Bases Formats
 
+**By:** Committed Sins
+
+**Author:** Michael J. Stallinger
+
 Display numeric amount columns in Obsidian Bases with exactly two decimal places, and optionally use a **Flexible table** with wrapping text and automatically growing rows. Stored properties, formula results, sorting, filters, and calculations keep their original precision.
 
 **Development preview — not yet released or listed in Community plugins.** Requires Obsidian 1.15.0 or newer. Plugin ID: `bases-formats`. MIT licensed.
@@ -33,7 +37,7 @@ views:
     columnWidth: 280
 ```
 
-The view displays any selected properties and formula values through their own rendering hooks. It does not extract note content or interpret Markdown itself. If [Bases Excerpts](https://github.com/stallinger-dev/obsidian-bases-excerpts) is also enabled, its excerpt values render Markdown and source-relative links here just as they do in the native table. Flexible table adds automatic row height and full wrapping. The plugins are independent.
+The view displays any selected properties and formula values through their own rendering hooks. It does not extract note content or interpret Markdown itself. If [Bases Excerpts](https://github.com/committed-sins/obsidian-bases-excerpts) is also enabled, its excerpt values render Markdown and source-relative links here just as they do in the native table. Flexible table adds automatic row height and full wrapping. The plugins are independent.
 
 Configure columns, filters, sorting, grouping, and limits using Bases. Column width is adjustable in view settings (100–800 px, default 280). The table is read-only, while links remain clickable. Use a native table view of the same Base to edit properties. All returned rows are rendered, so set a Bases limit for large result sets.
 
