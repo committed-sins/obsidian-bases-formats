@@ -1,0 +1,25 @@
+{
+  "name": "obsidian-bases-formats",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Display numeric amount columns in Bases with two decimal places, without changing stored values.",
+  "license": "MIT",
+  "author": "Michael J. Stallinger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stallinger-dev/obsidian-bases-formats.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "check": "npm run build && npm test",
+    "deploy": "npm run check && node scripts/deploy.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "linkedom": "0.18.15"
+  }
+}

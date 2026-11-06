@@ -1,0 +1,10 @@
+{
+  "id": "bases-formats",
+  "name": "Bases Formats",
+  "version": "0.1.0",
+  "minAppVersion": "1.15.0",
+  "description": "Display numeric amount columns in Bases with two decimal places, without changing stored values.",
+  "author": "Michael J. Stallinger",
+  "authorUrl": "https://stallinger.dev",
+  "isDesktopOnly": false
+}
